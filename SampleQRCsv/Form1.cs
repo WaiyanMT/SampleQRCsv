@@ -116,10 +116,15 @@ namespace SampleQRCsv
                                 }
                             }
                         }
+                        lblError.Visible = false;
+                        lblMsg.Visible = false;
                     }
-
-                    lblError.Visible = false;
-                    lblMsg.Visible = false;
+                    else
+                    {
+                        lblError.Text = "Can't retrieve resoureid for this machine tagid";
+                        lblError.Visible = true;
+                        lblMsg.Visible = true;
+                    }
                 }
             }
         }
