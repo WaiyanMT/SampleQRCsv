@@ -48,6 +48,10 @@ namespace SampleQRCsv.BusinessLogic
             }
             catch (Exception ex)
             {
+                if (ex.Message == "Unable to connect to the remote server")
+                {
+                    bearerToken = "Connection issue";
+                }
                 Log.Error(string.Format("{0}:{1}", System.Reflection.MethodBase.GetCurrentMethod().Name, ex.Message), ex);
             }
 
